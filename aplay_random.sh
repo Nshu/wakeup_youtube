@@ -11,5 +11,5 @@ random=$RANDOM
 wavs_l=${#wavs[@]}
 play_index=$(( ${random} % ${wavs_l} ))
 
-aplay -D hw:1,0 ${WAV_DIR}/${wavs[${play_index}]}
+aplay -N -D hw:1,0 ${WAV_DIR}/${wavs[${play_index}]}
 
