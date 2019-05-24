@@ -8,7 +8,7 @@ readonly PLAYLIST_URL="https://www.youtube.com/playlist?list=PLl_bkR2Yd2EF0TShPL
 readonly CACHE_DIR="local_cache"
 
 # online video IDs
-oIDs=$(youtube-dl --get-id ${PLAYLIST_URL})
+oIDs=$(youtube-dl --get-id ${PLAYLIST_URL}) || exit 0 # if youtube-dl failed, exit.s
 #oIDs=$(cat oIDs_cache.txt)
 echo ${oIDs} > oIDs_cache.txt
 
